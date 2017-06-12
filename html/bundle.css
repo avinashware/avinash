@@ -1,0 +1,60 @@
+body
+{
+    font-family: Open sans,sans-serif;
+
+	font-size: 18px;
+
+	font-weight: 400;
+
+}
+
+*{
+	margin: 0px;
+	
+	padding: 0px;
+
+	box-sizing:border-box;
+}
+
+.banner{
+
+	background: url('img/bg1.jpg') no-repeat top center;
+
+	padding: 200px 0 200px 0;
+
+	background-size: cover;
+}
+.banner
+{
+	text-align:center;
+}
+
+.menubar
+{
+	text-align: center;
+
+	padding:20px;
+
+	box-shadow: 10px 10px 5px #888888;
+}
+.menubar a
+{
+	text-decoration: none;
+
+	padding: 10px;
+
+	color:#444472;
+}
+
+.menubar a:visited
+{
+	color: #444472;
+	
+} 
+
+.menubar a:hover
+{
+	color: #d43093;
+} 
+
+
