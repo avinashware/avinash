@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="Night Stars">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Night Stars</title>
+  <style>
+    document,body{
+      margin:0;
+    }
+    canvas{
+      background-color: black;
+    }
+  </style>
+  <script type="text/javascript">
+  window.onload = function(){
+ 
+     var canvas = document.getElementById('avicanvas');
+     
+     var ctx = canvas.getContext('2d'); 
+      
+     canvas.width = window.innerWidth;
+
+     canvas.height = window.innerHeight;
+
+     //create particle
+      
+    function getRandomColor()
+    {
+       var r = Math.ceil(Math.random()*1000);
+       var g = Math.ceil(Math.random()*1000);
+       var b = Math.ceil(Math.random()*1000);
+       return 'rgb('+r+','+g+','+b+')';           
+        
+    }
+      var x =  Math.random()*canvas.width;
+      
+      var y = Math.random()*canvas.height;
+      
+      var vx = vy = 10;
+      
+      
+      
+      ctx.fillStyle = getRandomColor();
+      
+      
+      
+      // code for velocity of particle
+      function draw(){
+          x += vx;
+          y += vy;
+          ctx.clearRect(0,0,canvas.width,canvas.height);  
+          
+          ctx.fillRect(x,y,10,10);
+          
+          if(x > canvas.width || x<0){
+              vx = -vx;
+          }
+          
+          
+          if(y > canvas.height || y<0){
+              vy = -vy;
+          }
+          requestAnimationFrame(draw);
+      }
+      
+      draw();    
+      
+
+      
+  };
+   
+  
+ </script>
+</head>
+<body>
+<canvas id="avicanvas"></canvas>
+</body>
+</html>
