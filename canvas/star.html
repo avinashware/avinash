@@ -6,14 +6,15 @@
   <meta name="viewport" content="width=device-width">
   <title>Night Stars</title>
   <style>
-    document,body{
+    *{
       margin:0;
-        padding: 0;
-        overflow: hidden;
-        
+      padding: 0;
     }
+      body {width:100%; height:100%; }
     canvas{
       background-color: black;
+      display: block;
+        border: 1px solid red;
     }
   </style>
   <script type="text/javascript">
@@ -22,15 +23,15 @@
      
      var ctx = canvas.getContext('2d'); 
       
-     canvas.width = window.innerWidth;
+    canvas.width = 200;
 
-     canvas.height = window.innerHeight;
+    canvas.height = 200;
     
     var speed = 2;
       
     var total_particles = 1;
       
-    var size = 5; 
+    var size = 100; 
       
     var loop = null;
       
@@ -59,12 +60,13 @@
         ctx.fillStyle = particle.color;
         ctx.fillRect(particle.x,particle.y,size,size);  
           
-        if(particle.x > Math.floor(canvas.width) || particle.x<0){
+        if(particle.x > canvas.width || particle.x<0){
               particle.vx = -particle.vx;
           }
           
           
-          if(particle.y > Math.floor(canvas.height) || particle.y<0){
+          if(particle.y > canvas.height-2 || particle.y<0){
+              console.log(particle.y +'=='+canvas.height)
               particle.vy = -particle.vy;
           }
             
@@ -75,7 +77,6 @@
           
         for(i=0;i<Particles.length;i++)
         {
-         //console.log(Particles[i]);    
           Update(Particles[i]);
         }
         loop = requestAnimationFrame(draw);
