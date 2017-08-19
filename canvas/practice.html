@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="description" content="Night Stars">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Night Stars</title>
+  <style>
+    *{
+        margin:0;
+        padding: 0;
+    }
+    canvas{
+      display: block;
+    }
+  </style>
+  <script type="text/javascript">
+  window.onload = function(){
+      var canvas = document.getElementById('avicanvas');
+     
+     var ctx = canvas.getContext('2d'); 
+      
+    canvas.width = window.innerWidth();
+    canvas.height = window.innerHeight();
+    ctx.beginPath();
+    ctx.arc(100,0,50 ,0,2*Math.PI,true);
+    ctx.fill();
+    
+  };
+   
+ </script>
+</head>
+<body>
+<canvas id="avicanvas"></canvas>
+</body>
+</html>
